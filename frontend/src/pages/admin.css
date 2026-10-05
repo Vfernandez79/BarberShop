@@ -1,0 +1,424 @@
+:root {
+  --admin-bg: #0b0b0c;
+  --admin-panel: rgba(255, 255, 255, 0.06);
+  --admin-panel-strong: rgba(255, 255, 255, 0.1);
+  --admin-border: rgba(255, 255, 255, 0.12);
+  --admin-text: rgba(255, 255, 255, 0.92);
+  --admin-text-dim: rgba(255, 255, 255, 0.62);
+  --admin-gold: #d7b04a;
+  --admin-radius: 16px;
+}
+
+.adminRoot {
+  min-height: 100vh;
+  background: radial-gradient(1200px 800px at 20% 0%, rgba(215, 176, 74, 0.12), transparent 60%),
+    radial-gradient(900px 700px at 80% 30%, rgba(255, 255, 255, 0.06), transparent 60%), var(--admin-bg);
+  color: var(--admin-text);
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+
+.adminSidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 18px 14px;
+  border-right: 1px solid var(--admin-border);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.adminBrand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 10px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.adminBrandMark {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  background: rgba(215, 176, 74, 0.95);
+  display: grid;
+  place-items: center;
+  color: #0b0b0c;
+}
+
+.adminBrandText {
+  display: grid;
+  line-height: 1.1;
+}
+
+.adminBrandTitle {
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.adminBrandSub {
+  font-size: 12px;
+  color: var(--admin-text-dim);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.adminNav {
+  display: grid;
+  gap: 6px;
+}
+
+.adminNavLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px;
+  border-radius: 14px;
+  color: var(--admin-text);
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.adminNavLink:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.adminNavLink.isActive {
+  background: rgba(215, 176, 74, 0.12);
+  border-color: rgba(215, 176, 74, 0.3);
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.adminNavIcon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.9;
+}
+
+.adminSidebarFooter {
+  margin-top: auto;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid var(--admin-border);
+  background: rgba(0, 0, 0, 0.22);
+  display: grid;
+  gap: 10px;
+}
+
+.adminFooterRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.adminMeta {
+  font-size: 12px;
+  color: var(--admin-text-dim);
+}
+
+.adminMain {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+}
+
+.adminTopbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--admin-border);
+  background: rgba(11, 11, 12, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.adminTitleBlock {
+  display: grid;
+  gap: 2px;
+}
+
+.adminTitle {
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.adminSubtitle {
+  color: var(--admin-text-dim);
+  font-size: 13px;
+}
+
+.adminTopbarActions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.adminContent {
+  padding: 18px 16px 28px;
+}
+
+.adminContainer {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+.adminCard {
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 14px;
+}
+
+.adminCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.adminCardTitle {
+  font-weight: 800;
+}
+
+.adminGrid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.adminFormGrid {
+  display: grid;
+  gap: 10px;
+}
+
+.adminFormRow {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.adminTableWrap {
+  overflow: auto;
+  border-radius: var(--admin-radius);
+  border: 1px solid var(--admin-border);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.adminTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.adminTable th,
+.adminTable td {
+  padding: 12px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: left;
+}
+
+.adminTable th {
+  color: var(--admin-text-dim);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.adminInput,
+.adminSelect {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.24);
+  color: var(--admin-text);
+  padding: 10px 12px;
+  outline: none;
+}
+
+.adminInput::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.adminButton {
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--admin-text);
+  padding: 10px 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.adminButton:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.adminButtonPrimary {
+  border-color: rgba(215, 176, 74, 0.35);
+  background: rgba(215, 176, 74, 0.14);
+}
+
+.adminButtonPrimary:hover {
+  background: rgba(215, 176, 74, 0.18);
+}
+
+.adminButtonDanger {
+  border-color: rgba(255, 90, 90, 0.35);
+  background: rgba(255, 90, 90, 0.14);
+}
+
+.adminRoot input:not([type="checkbox"]),
+.adminRoot select,
+.adminRoot textarea {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.24);
+  color: var(--admin-text);
+  padding: 10px 12px;
+  outline: none;
+}
+
+.adminRoot input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.adminRoot button {
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--admin-text);
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.adminRoot button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.adminAuthRoot {
+  min-height: 100vh;
+  background: radial-gradient(1200px 800px at 20% 0%, rgba(215, 176, 74, 0.12), transparent 60%),
+    radial-gradient(900px 700px at 80% 30%, rgba(255, 255, 255, 0.06), transparent 60%), var(--admin-bg);
+  color: var(--admin-text);
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.adminAuthCard {
+  width: 100%;
+  max-width: 520px;
+  border: 1px solid var(--admin-border);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 18px;
+}
+
+.adminAuthHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.adminAuthTitle {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.adminAuthSub {
+  color: var(--admin-text-dim);
+  font-size: 13px;
+}
+
+.adminError {
+  border: 1px solid rgba(255, 90, 90, 0.35);
+  background: rgba(255, 90, 90, 0.12);
+  color: rgba(255, 255, 255, 0.92);
+  padding: 10px 12px;
+  border-radius: 14px;
+}
+
+.adminHamburger {
+  display: none;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--admin-text);
+  padding: 10px 12px;
+}
+
+.adminBackdrop {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .adminRoot {
+    grid-template-columns: 1fr;
+  }
+
+  .adminSidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translateX(-110%);
+    transition: transform 180ms ease;
+    width: 280px;
+    z-index: 20;
+  }
+
+  .adminSidebar.isOpen {
+    transform: translateX(0);
+  }
+
+  .adminBackdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 15;
+  }
+
+  .adminHamburger {
+    display: inline-flex;
+  }
+
+  .adminTable {
+    min-width: 680px;
+  }
+}
+
+@media (max-width: 560px) {
+  .adminContent {
+    padding: 14px 12px 22px;
+  }
+
+  .adminGrid2 {
+    grid-template-columns: 1fr;
+  }
+
+  .adminFormRow {
+    grid-template-columns: 1fr;
+  }
+
+  .adminTitle {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,9 @@
+flask
+flask-cors
+sqlalchemy
+python-dotenv
+itsdangerous
+werkzeug
+firebase-admin
+gunicorn
+pyodbc
