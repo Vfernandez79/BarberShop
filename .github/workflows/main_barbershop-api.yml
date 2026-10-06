@@ -63,7 +63,11 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: python-app
-          path: .
+
+      - name: Debug artifact structure
+        run: |
+          pwd
+          ls -R
       
       - name: Login to Azure
         uses: azure/login@v2
@@ -77,6 +81,5 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'barbershop-api'
-          slot-name: 'Production'
-          package: backend
+          slot-name: 'Production'        
           
