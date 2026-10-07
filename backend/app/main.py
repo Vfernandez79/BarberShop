@@ -41,6 +41,10 @@ from app.notifications import BookingEmail, SimpleEmail, build_appointment_ics, 
 
 _STARTED_AT = datetime.utcnow().isoformat()
 
+_FRONTEND_URL = os.getenv(
+    "FRONTEND_URL",
+    "http://localhost:5173"
+).rstrip("/")
 
 def create_app() -> Flask:
     app = Flask(__name__)
@@ -988,7 +992,7 @@ def create_app() -> Flask:
             return jsonify({"detail": str(exc)}), 409
 
         if pm.name == "RedCompra":
-            appointment.payment_url = f"http://localhost:5173/pay/{appointment.id}"
+            appointment.payment_url = (f"{_FRONTEND_URL}/pay/{appointment.id}")
         else:
             appointment.payment_url = None
             appointment.status = AppointmentStatus.CONFIRMED
